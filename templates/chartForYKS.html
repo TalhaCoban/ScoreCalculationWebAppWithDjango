@@ -1,0 +1,27 @@
+{% extends "dashboardForYKS.html" %}
+{% block chart %}
+<div id="container"></div>
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+<script>
+  Highcharts.chart('container', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Tarihe göre ham puan ve yerleşme paunları'
+      },
+      xAxis: {
+          categories: {{labels|safe}}
+      },
+      series: [{
+          name: 'ham puan',
+          data: {{dataHam|safe}},
+          color: 'green'
+      }, {
+          name: 'yerleşme puanı',
+          data: {{dataYer|safe}},
+          color: 'blue'
+      }]
+  });
+</script>
+{% endblock chart %}

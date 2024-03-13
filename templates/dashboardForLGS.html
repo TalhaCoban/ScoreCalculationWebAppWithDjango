@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if results %}
+<div style = "margin-bottom:20px;" class="row">
+  <div class="col-md-10 offset-md-1">
+  <form action="/LGS/dashboard/{{user.id}}">
+    <input type = "checkbox" class ="checking" name = "checking">
+    <label for="checkbox"><p class = "checking"><strong>Grafik Çıkarmak istiyorum</strong></p></label>
+    <button type ="submit" class = "btn btn-info btn-sm">gönder</button>
+  </form>
+  </div>
+</div>
+<div style = "margin-bottom:20px;" class="row">
+  <div style = "margin-bottom:30px;" class="col-md-10 offset-md-1">
+  {% block chart %}
+
+  {% endblock chart %}
+  </div>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+        <th scope="col">Tarih</th>
+        <th scope="col">Puan</th>
+        <th scope="col"> </th>
+    </tr>
+  </thead>
+  <tbody>
+{% for result in results %}
+    <tr>
+        <td> <a href = "/LGS/detail/{{result.id}}"> {{result.created_date}} </a></td>
+        <td> {{result.lgspuan}} </td>
+        <td> <a class = "btn btn-danger" href = "/LGS/DeleteResult/{{result.id}}"> Sil </a> </td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{request.user.username}}</strong> kullanıcı adına ait kayıt bulunamadı
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endif %}
+{% endblock body %}

@@ -1,0 +1,352 @@
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(248, 248, 248);
+}
+
+.registerlogin {
+    background-color: #141313;
+}
+
+
+.Register-box {
+    width: 280px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-55%);
+    color: black;
+}
+
+.Register-box h1 {
+    float: left;
+    font-size: 40px;
+    border-bottom: 6px solid rgb(41, 116, 43);
+    margin-bottom: 50px;
+    padding: 13px 0;
+}
+
+.textbox{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 1px solid rgb(41, 116, 43);
+}
+
+.textbox i {
+    width: 26px;
+    float: left;
+    text-align: center;
+    color: black;
+}
+
+.textbox input{
+    border: none;
+    outline: none;
+    background: none;
+    color: black;
+    font-size: 18px;
+    width: 80%;
+    float: left;
+    margin: 0 10px;
+}
+
+.btnForRegister {
+    width: 100%;
+    background: none;
+    border: 2px solid rgb(41, 116, 43);
+    color: black;
+    padding: 5px;
+}
+
+
+
+
+.mytable1 {
+    border-collapse: collapse;
+    border: 2px solid black;
+  }
+
+.mytable1 th {
+    background-color: rgb(69, 167, 206);
+}
+
+.mytable1 th.dogru {
+    background-color: rgb(26, 179, 26);
+}
+
+.mytable1 th.yanlıs {
+    background-color: rgb(238, 56, 56);
+}
+
+
+.mytable1 th, .mytable1 td {
+    border: 2px solid black;
+    height: 45px;
+    width: 280px;
+    text-align: center;
+}
+
+
+
+.mytable2 {
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+.mytable2 th {
+    background-color: rgb(69, 167, 206);
+}
+
+.mytable2 th.dogru {
+    background-color: rgb(26, 179, 26);
+}
+
+.mytable2 th.yanlıs {
+    background-color: rgb(238, 56, 56);
+}
+
+.mytable2 th, .mytable2 td {
+    border: 2px solid black;
+    height: 45px;
+    width: 85px;
+    text-align: center;
+}
+
+
+
+.mytable3 {
+    border-collapse: collapse;
+    border: 2px solid black;
+  }
+
+.mytable3 th {
+    background-color: rgb(69, 167, 206);
+}
+
+.mytable3 th.dogru {
+    background-color: rgb(26, 179, 26);
+}
+
+.mytable3 th.yanlıs {
+    background-color: rgb(238, 56, 56);
+}
+
+
+.mytable3 th, .mytable3 td {
+    border: 2px solid black;
+    height: 45px;
+    width: 158px;
+    text-align: center;
+}
+
+
+
+.input {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.diplomapuanı {
+    width: 150px;
+    height: 38px;
+    border: 2px solid rgb(69, 167, 206);
+}
+
+div.yks-hesapla {
+    width: 160px;
+    height: 50px;
+    margin-left: 468px;
+    align-items: center;
+}
+
+div.yks-kaydet {
+    width: 228px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 430px;
+    align-items: center;
+}
+
+.mytable1 td.yanbaslık {
+    background-color: rgb(223, 133, 60);
+}
+
+p.checking {
+    color: rgb(168, 37, 37);
+}
+
+h2.baslık {
+    color: rgb(179, 6, 6);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+h3.baslık {
+    color: rgb(175, 45, 45);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h3.baslık2 {
+    color: rgb(175, 45, 45);
+    margin-bottom: 20px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.bttn-success {
+    background-color: rgb(50, 153, 50);
+    padding: 7px 45px;
+    border-radius: 8px;
+    border: 2px solid rgb(13, 97, 13);
+    font-size: 18px;
+    transition-duration: 0.4s;
+    margin-top: 24px;
+    text-decoration: none;
+    float: right;
+}
+
+.bttn-success:hover {
+    background-color: rgb(17, 107, 17);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+.bttn-success-middle {
+    background-color: rgb(50, 153, 50);
+    padding: 7px 45px;
+    border-radius: 8px;
+    border: 2px solid rgb(13, 97, 13);
+    font-size: 18px;
+    transition-duration: 0.4s;
+    margin-top: 24px;
+    text-decoration: none;
+    margin-left: 43%;
+}
+
+.bttn-success-middle:hover {
+    background-color: rgb(17, 107, 17);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+.bttn-primary {
+    background-color: rgb(65, 158, 201);
+    padding: 7px 45px;
+    border-radius: 8px;
+    border: 2px solid rgb(42, 13, 97);
+    font-size: 18px;
+    transition-duration: 0.4s;
+    float : right;
+    margin-top: 24px;
+    margin-right: 34px;
+    text-decoration: none;
+    color: black;
+}
+
+.bttn-primary:hover {
+    background-color: rgb(15, 86, 179);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.bttn-secondary-middle {
+    background-color: rgb(152, 162, 167);
+    padding: 7px 45px;
+    border-radius: 8px;
+    border: 2px solid rgb(83, 82, 82);
+    font-size: 18px;
+    transition-duration: 0.4s;
+    margin-top: 24px;
+    margin-left: 41%;
+    text-decoration: none;
+    color: black;
+}
+
+.bttn-secondary {
+    background-color: rgb(152, 162, 167);
+    padding: 7px 45px;
+    border-radius: 8px;
+    border: 2px solid rgb(83, 82, 82);
+    font-size: 18px;
+    transition-duration: 0.4s;
+    margin-top: 24px;
+    text-decoration: none;
+    color: black;
+}
+
+
+.bttn-primary-middle:hover {
+    background-color: rgb(105, 112, 121);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.bttn-primary:hover {
+    background-color: rgb(105, 112, 121);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.bttn-danger {
+    background-color: rgb(221, 57, 35);
+    padding: 7px 45px;
+    border-radius: 8px;
+    border: 2px solid rgb(97, 16, 13);
+    font-size: 18px;
+    transition-duration: 0.4s;
+    float : right;
+    margin-top: 24px;
+    margin-right: 34px;
+    text-decoration: none;
+    color: black;
+}
+
+.bttn-small {
+    padding: 5px 30px;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.bttn-danger:hover {
+    background-color: rgb(190, 22, 22);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+div.sonuclariKaydet {
+    margin-top: 80px;
+    margin-left: 15%;
+}
+
+.selectDepartment {
+    background-color: None;
+    border: 2px solid rgb(127, 131, 127);
+    border-radius: 7px;
+    padding-top: 2px;
+    padding-bottom: 8px;
+    color: rgb(3, 104, 107);
+}
+
+div.LGSsonuclar {
+    margin-top: 20px;
+    margin-left: 18%;
+    margin-right: 18%;
+    border: 1px solid;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 8px;
+}
+
+

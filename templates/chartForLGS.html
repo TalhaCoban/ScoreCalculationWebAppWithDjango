@@ -1,0 +1,24 @@
+{% extends "dashboardForLGS.html" %}
+{% block chart %}
+<div id="container"></div>
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+<script>
+  Highcharts.chart('container', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Tarihe göre lgs puanları'
+      },
+      xAxis: {
+          categories: {{labels|safe}}
+      },
+      series: [{
+          name: 'Lgs Puanı',
+          data: {{data|safe}},
+          color: '#008080'
+      }]
+  });
+</script>
+{% endblock chart %}
+
