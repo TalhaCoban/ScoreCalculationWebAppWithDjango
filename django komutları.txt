@@ -1,0 +1,23 @@
+django-admin startproject blog
+
+python manage.py runserver
+
+python manage.py migrate   #tabloları oluşturur
+
+python manage.py createsuperuser  #admin paneline giriş yapmamızı sağlayan bir tane kullanıcı oluşturur
+
+Talha  ---  *********
+
+python manage.py startapp (article)
+
+python manage.py makemigrations   #Tablo kaydetmek için gerekli py dosyasını oluşturur
+
+python manage.py migrate   #migrations dosyasına göre tablo oluşturur
+
+python manage.py shell    #django hazır modulleri dahil edilmiş python shell'i açar
+
+>>> from django.contrib.auth.models import User
+>>> from article.models import Article
+
+python manage.py collectstatic  #bütün static dosyalarını bir klasörde toplar
+

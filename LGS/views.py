@@ -56,6 +56,7 @@ def SureToDeleteResult(request,id):
     return redirect(reverse("LGS:dashboard",kwargs={"id":user_id}))    
 
 
+
 def calculate(request,id):
     if request.method == "POST":
 

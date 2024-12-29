@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="row">
+    <div class="col-md-12 offset-md-0">
+        <h2 class = "baslık"> LGS Puan Hesaplama </h2>
+        <form method="POST">
+            {% csrf_token %}
+            <table class="mytable3">
+                <thead>
+                    <tr>
+                        <td scope="col"></td>
+                        <th scope="col"><strong>Türkçe</strong>(20)</th>
+                        <th scope="col"><strong>T.C. İnkilap Tarihi</strong>(10)</th>
+                        <th scope="col"><strong>Din Kültürü ve A.B.</strong>(10)</th>
+                        <th scope="col"><strong>Yabancı Dil</strong>(10)</th>
+                        <th scope="col"><strong>Matematik</strong>(20)</th>
+                        <th scope="col"><strong>Fen</strong>(20)</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class = "dogru" scope="row"><strong>Doğru</strong></th>
+                        <td><input class= "input" type = "number" min = "0" max = "20" name = "tTurkce" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "10" name = "tInk" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "10" name = "tDkab" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "10" name = "tDil" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "20" name = "tMat" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "20" name = "tFen" size = "2"></td>
+                    </tr>
+                    <tr>
+                        <th class = "yanlıs" scope="row"><strong>Yanlış</strong></th>
+                        <td><input class= "input" type = "number" min = "0" max = "20" name = "fTurkce" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "10" name = "fInk" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "10" name = "fDkab" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "10" name = "fDil" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "20" name = "fMat" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "20" name = "fFen" size = "2"></td>
+                    </tr>
+                </tbody>
+            </table>
+            {% if request.user.is_authenticated %}
+                <input type="submit" class= "bttn-success-middle" formaction="/LGS/calculate/{{user.id}}" value="Hesapla">
+            {% else %}
+                <input type="submit" class= "bttn-success-middle" formaction="/nonuserlgs" value="Hesapla">
+            {% endif %}
+        </form>
+        {% block LGSresult %}
+        
+        {% endblock LGSresult %}
+    </div>
+</div>
+{% endblock body %}

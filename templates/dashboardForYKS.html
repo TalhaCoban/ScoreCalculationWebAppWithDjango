@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if results %}
+<div style = "margin-bottom:20px;" class="row">
+  <div class="col-md-10 offset-md-1">
+  <form action="/YKS/dashboard/{{user.id}}">
+    <label for="forGraph"><p class = "checking"><strong>Grafik çıkarmak istediğiniz bölümü seçiniz:</strong></p></label>
+    <select class = "selectDepartment" id="forGraph" name="forGraph">
+      <option value="tyt">TYT</option>
+      <option value="sayisal">Sayisal</option>
+      <option value="ea">Eşit Ağırlık</option>
+      <option value="Sozel">Sözel</option>
+      <option value="dil">Dil</option>
+    </select>
+    <input class = "btn btn-secondary" type="submit">
+  </form>
+  </div>
+</div>
+<div style = "margin-bottom:20px;" class="row">
+  <div style = "margin-bottom:30px;" class="col-md-10 offset-md-1">
+  {% block chart %}
+
+  {% endblock chart %}
+  </div>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+        <th scope="col">Tarih</th>
+        <th scope="col">TYT</th>
+        <th scope="col">Sayısal</th>
+        <th scope="col">Eşit ağırlık</th>
+        <th scope="col">Sözel</th>
+        <th scope="col">YDT(dil)</th>
+        <th scope="col"> </th>
+        <th scope="col"> </th>
+    </tr>
+  </thead>
+  <tbody>
+{% for result in results %}
+    <tr>
+        <td> <a href = "/YKS/detail/{{result.id}}"> {{result.created_date}} </a></td>
+        <td> {{result.tytyer}} </td>
+        <td> {{result.sayisalyer}} </td>
+        <td> {{result.eayer}} </td>
+        <td> {{result.sozelyer}} </td>
+        <td> {{result.ydtyer}} </td>
+        <td> <a class = "btn btn-outline-success m-0 waves-effect" href = "/YKS/detail/{{result.id}}"> İncele </a> </td>
+        <td> <a class = "btn btn-outline-danger m-0 waves-effect" href = "/YKS/DeleteResult/{{result.id}}"> Sil </a> </td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{request.user.username}}</strong> kullanıcı adına ait kayıt bulunamadı
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endif %}
+{% endblock body %}

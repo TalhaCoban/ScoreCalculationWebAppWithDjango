@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if results %}
+<div class="row">
+    <div class="col-md-12 offset-md-0">
+        <h2 class = "baslık"> YKS Puanları </h2>
+        <table class="mytable">
+            <thead>
+                <tr class = "ust">
+                    <th class = "yanbaslık" scope="col"></th>
+                    <th scope="col"><strong>TYT puanı</strong></th>
+                    <th scope="col"><strong>AYT sayısal puan</strong></th>
+                    <th scope="col"><strong>AYT eşit ağırlık</strong></th>
+                    <th scope="col"><strong>AYT sözel puan</strong></th>
+                    <th scope="col"><strong>YDT puanı</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class = "yanbaslık" scope="row"><strong>Ham Puan</strong></td>
+                    <td> {{results.tytham}} </td>
+                    <td> {{results.sayisalham}} </td>
+                    <td> {{results.eaham}} </td>
+                    <td> {{results.sozelham}} </td>
+                    <td> {{results.ydtham}} </td>
+                </tr>
+                <tr class = "alt">
+                    <td class = "yanbaslık" scope="row"><strong>Yerleşme Puanı</strong></td>
+                    <td> {{results.tytyer}} </td>
+                    <td> {{results.sayisalyer}} </td>
+                    <td> {{results.eayer}} </td>
+                    <td> {{results.sozelyer}} </td>
+                    <td> {{results.ydtyer}} </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <h3 class = "baslık2"> Ham puan sıralamaları </h3>
+        <table class="mytable">
+            <thead>
+                <tr class = "ust">
+                    <th class = "yanbaslık" scope="col"></th>
+                    <th scope="col"><strong>TYT sıralama</strong></th>
+                    <th scope="col"><strong>sayısal sıralama</strong></th>
+                    <th scope="col"><strong>eşit ağırlık sıralama</strong></th>
+                    <th scope="col"><strong>sözel sıralama</strong></th>
+                    <th scope="col"><strong>YDT sıralama</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class = "yanbaslık" scope="row"><strong>2019</strong></td>
+                    <td> {{results.tyt_sir_2019_ham}} </td>
+                    <td> {{results.ayt_sir_sayisal_2019_ham}} </td>
+                    <td> {{results.ayt_sir_ea_2019_ham}} </td>
+                    <td> {{results.ayt_sir_sozel_2019_ham}} </td>
+                    <td> {{results.ydt_sir_2019_ham }}    </tr>
+                <tr class = "alt">
+                    <td class = "yanbaslık" scope="row"><strong>2018</strong></td>
+                    <td> {{results.tyt_sir_2018_ham}} </td>
+                    <td> {{results.ayt_sir_sayisal_2018_ham}} </td>
+                    <td> {{results.ayt_sir_ea_2018_ham}} </td>
+                    <td> {{results.ayt_sir_sozel_2018_ham}} </td>
+                    <td> {{results.ydt_sir_2018_ham}} </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+
+        <h3 class = "baslık2"> Yerleşme puanı sıralamaları </h3>
+        <table class="mytable">
+            <thead>
+                <tr class = "ust">
+                    <th class = "yanbaslık" scope="col"></th>
+                    <th scope="col"><strong>TYT sıralama</strong></th>
+                    <th scope="col"><strong>sayısal sıralama</strong></th>
+                    <th scope="col"><strong>eşit ağırlık sıralama</strong></th>
+                    <th scope="col"><strong>sözel sıralama</strong></th>
+                    <th scope="col"><strong>YDT sıralama</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class = "yanbaslık" scope="row"><strong>2019</strong></td>
+                    <td> {{ results.tyt_sir_2019_yer}} </td>
+                    <td> {{ results.ayt_sir_sayisal_2019_yer}} </td>
+                    <td> {{ results.ayt_sir_ea_2019_yer}} </td>
+                    <td> {{ results.ayt_sir_sozel_2019_yer}} </td>
+                    <td> {{ results.ydt_sir_2019_yer}} </td>
+                </tr>
+                <tr class = "alt">
+                    <td class = "yanbaslık" scope="row"><strong>2018</strong></td>
+                    <td> {{ results.tyt_sir_2018_yer}} </td>
+                    <td> {{ results.ayt_sir_sayisal_2018_yer}} </td>
+                    <td> {{ results.ayt_sir_ea_2018_yer}} </td>
+                    <td> {{ results.ayt_sir_sozel_2018_yer}} </td>
+                    <td> {{ results.ydt_sir_2018_yer}} </td>
+                </tr>
+            </tbody>
+        </table>    
+    </div>
+</div>
+{% else %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{request.user.username}}</strong> no found file
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>    
+{% endif %}
+{% endblock body %}

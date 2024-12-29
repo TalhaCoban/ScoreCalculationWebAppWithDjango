@@ -1,0 +1,11 @@
+{% extends "LGS.html" %}
+{% block LGSresult %}
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class = "LGSsonuclar">
+            <h4>Puan: {{lgspuan}}</h4>
+        </div>
+    </div>
+</div>
+<a type="submit" class = "bttn-secondary-middle" href = "/LGS/SaveResults/{{user.id}}">Puanı Kaydet</a>
+{% endblock LGSresult %}

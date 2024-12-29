@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h2>Burası anasayfa</h2>
+    {% if request.user.is_authenticated %}
+        {{request.user.username}}
+    {% endif %}
+
+{% endblock body %}

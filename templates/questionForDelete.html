@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body %}
+<div style = "margin-bottom:20px;" class="row">
+  <div class="col-md-4 offset-md-4">
+    <h4><strong>Silmek istediğinizden emin misiniz?</strong></h4><br>
+    {% if lgs %}
+    <a style = "margin-left:25%;" href = "/LGS/dashboard/{{user.id}}" class = "btn btn-info">Hayır</a>
+    <a href = "/LGS/SureToDeleteResult/{{id}}" class = "btn btn-danger">Evet</a>
+    {% elif yks %}
+    <a style = "margin-left:25%;" href = "/YKS/dashboard/{{user.id}}" class = "btn btn-info">Hayır</a>
+    <a href = "/YKS/SureToDeleteResult/{{id}}" class = "btn btn-danger">Evet</a>
+    {% else %}
+    <p>sınav bulunamadı</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock body %}

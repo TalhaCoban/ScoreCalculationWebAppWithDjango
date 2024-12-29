@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="row">
+    <div class="col-md-12 offset-md-0">
+        <h2 class = "baslık"> YKS Puan Hesaplama </h2>
+        <form method="POST">
+            {% csrf_token %}
+            <input type = "checkbox" class ="checking" name = "checking">
+            <label for="vehicle1"><p class = "checking"><strong>Geçen sene bir bölüme yerleştim</strong></p></label>
+            <br>
+            <label for="vehicle1"><h4>Diploma Puanı: </h4></label>
+            <input type = "number" class = "diplomapuanı" min = "0" max = "100" name = "diplomaPuani">
+            <br>
+            <br>
+            <h3 class = "baslık"> TYT Puan Hesaplama </h3>
+            <table class="mytable1">
+                <thead>
+                    <tr>
+                        <td scope="col"> </td>
+                        <th scope="col"><strong>Türkçe</strong>(40)</th>
+                        <th scope="col"><strong>Sosyal Bilimler</strong>(20)</th>
+                        <th scope="col"><strong>Temel Matematik</strong>(40)</th>
+                        <th scope="col"><strong>Fen Bilimleri</strong>(20)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class = "dogru" scope="row"><strong>Doğru</strong></th>
+                        <td><input class= "input" type = "number" min = "0" max = "40" name = "tTurkce" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "20" name = "tSos" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "40" name = "tMatematik" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "20" name = "tFen" size = "2"></td>
+                    </tr>
+                    <tr>
+                        <th class = "yanlıs" scope="row"><strong>Yanlış</strong></th>
+                        <td><input class= "input" type = "number" min = "0" max = "40" name = "fTurkce" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "20" name = "fSos" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "40" name = "fMatematik" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "20" name = "fFen" size = "2"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+
+            <h3 class = "baslık2"> AYT/YDT Puan Hesaplama </h3>
+            <table class="mytable2">
+                <thead>
+                    <tr>
+                        <td scope="col"></td>
+                        <th scope="col"><strong>Mat</strong>(40)</th>
+                        <th scope="col"><strong>Fiz</strong>(14)</th>
+                        <th scope="col"><strong>Kim</strong>(13)</th>
+                        <th scope="col"><strong>Bio</strong>(13)</th>
+                        <th scope="col"><strong>Ede</strong>(24)</th>
+                        <th scope="col"><strong>Tar-1</strong>(10)</th>
+                        <th scope="col"><strong>Coğ-1</strong>(6)</th>
+                        <th scope="col"><strong>Tar-2</strong>(11)</th>
+                        <th scope="col"><strong>Coğ-2</strong>(11)</th>
+                        <th scope="col"><strong>Fel</strong>(12)</th>
+                        <th scope="col"><strong>DKAB</strong>(6)</th>
+                        <th scope="col"><strong>DİL</strong>(80)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" class = "dogru"><strong>Doğru</strong></th>
+                        <td><input class= "input" type = "number" min = "0" max = "40" name = "tMat" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "14" name = "tFiz" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "13" name = "tKim" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "13" name = "tBio" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "24" name = "tEde" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "10" name = "tTar1" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "6" name = "tCog1" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "11" name = "tTar2" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "11" name = "tCog2" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "12" name = "tFel" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "6" name = "tDkab" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "80" name = "tDil" size = "2"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class = "yanlıs"><strong>Yanlış</strong></th>
+                        <td><input class= "input" type = "number" min = "0" max = "40" name = "fMat" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "14" name = "fFiz" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "13" name = "fKim" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "13" name = "fBio" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "24" name = "fEde" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "10" name = "fTar1" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "6" name = "fCog1" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "11" name = "fTar2" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "11" name = "fCog2" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "12" name = "fFel" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "6" name = "fDkab" size = "2"></td>
+                        <td><input class= "input" type = "number" min = "0" max = "80" name = "fDil" size = "2"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <div class = "yks-hesapla">
+            {% if request.user.is_authenticated %}
+                <input type="submit" class= "bttn-success" formaction="/YKS/calculate/{{user.id}}" value="Hesapla">
+            {% else %}
+                <input type="submit" class= "bttn-success" formaction="/nonuseryks" value="Hesapla">
+            {% endif %}
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock body %}
